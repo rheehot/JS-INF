@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if 조건문</title>
+</head>
+
+<body>
+    <h2>Test</h2>
+    <script>
+        var str = prompt("input nomber");
+        var n = Number(str);
+        if (n > 5) {
+            console.log(n + " is bigger than 5");
+        } else if (n >= 3) {
+            console.log(n + "은 3이상 5이하입니다");
+        }
+        // 참일때만 실행이 된다
+        else {
+            console.log(n + "는 5이하입니다.");
+        }
+
+        // 예제01.입력받은 숫자가 홀수인지 짝수인지를 알려주는 프로그램을 작성해 봅시다.
+        var a = prompt("숫자를 입력하세요");
+        var n = Number(a);
+        if (n % 2 === 0) {
+            console.log(n + "은(는) 짝수입니다.");
+        } else {
+            console.log(n + "은(는) 홀수입니다.");
+        }
+        // 조건을 못함
+
+        // 예제02.입력받은 문자가 대문자로 되어 있으면 '대문자 문장입니다.' 소문자로 되어 있으면 '소문자 문장입니다.' 그 외에는 '보통 문장입니다.' 라고 출력하는 프로그램을 작성해 보세요.
+        var str = prompt("문장를 입력하세요");
+        var ustr = str.toUpperCase();
+        var lstr = str.toLowerCase();
+        if (str === ustr) {
+            console.log(
+                str + "은(는) 대문자 문장입니다."
+            );
+        } else if (str === lstr) {
+            console.log(
+                str + "은(는) 소문자 문장입니다."
+            );
+        } else {
+            console.log(
+                str + "은(는) 보통 문장입니다."
+            );
+        }
+        // 조건을 못함
+    </script>
+</body>
+
+</html>
