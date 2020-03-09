@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제01</title>
+</head>
+
+<body>
+    <script>
+        // 1번문제.두 수를 입력받아 4칙연산의 결과를 표시해 봅시다.
+        var a = prompt("숫자를 입력하세요");
+        var b = prompt("숫자를 입력하세요");
+        var c = Number(a);
+        var d = Number(b);
+        console.log(c + "+" + d + "=" + (c + d));
+        console.log(c + "-" + d + "=" + (c - d));
+        console.log(c + "*" + d + "=" + (c * d));
+        console.log(c + "/" + d + "=" + (c / d));
+        // 2번문제.BMI를 계산하는 프로그램을 작성해 봅시다.
+        var x = prompt("몸무게를 입력해주세요");
+        var y = prompt("신장을 입력해주세요");
+        var w = number(x);
+        var h = number(y) / 100;
+        var bmi = w / (h * h);
+        document.write("BMI는 " + bmi + " 입니다.");
+        // 3번문제.화씨를 입력받아서 섭씨로 바꾸는 프로그램을 작성해 봅시다.
+        var a = prompt("화씨를 입력하세요");
+        var b = -17.222222;
+        var c = number(a);
+        var f = c * b;
+        document.write("섭씨는 " + f + " 입니다.");
+        // 4번문제.입력한 문자열의 길이를 알려주는 프로그램을 작성해 봅시다.
+        var a = prompt("문자를 입력하세요");
+        var b = a.length;
+        document.write(a + "의 길이는 " + b + " 입니다.");
+    </script>
+</body>
+
+</html>
