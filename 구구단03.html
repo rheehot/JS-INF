@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문을 이용해 구구단 출력하기</title>
+</head>
+
+<body>
+    <h1>조건문을 이용해서 구구단 만들기</h1>
+    <script>
+        var i = Number(prompt("몇 단을 출력하실 건가요?"));
+        document.write("<h2>구구단 " + i + "단</h2>")
+        for (var n = 1; n < 10; n++) {
+            if (i < 2 || i > 9) {
+                document.write("2이상, 9이하의 값만 입력할 수 있습니다.");
+                break;
+            } else {
+                var g = n * i;
+                console.log(g);
+                document.write(i + "*" + n + "=" + (g) + "<br>");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
