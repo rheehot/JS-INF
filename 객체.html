@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체(object)</title>
+</head>
+
+<body>
+    <h1>객체</h1>
+    객체를 사용하면 변수와 함수를 묶어서 관리하게 됩니다.
+    속성과 메소드를 가집니다.
+    <script>
+        var p1 = {};
+        p1.name = "spring";
+        p1.eat = function (food) {
+            console.log(this.name + "이 " + food + "를 먹었습니다.")
+        };
+
+        p1.eat("banana");
+    </script>
+</body>
+
+</html>

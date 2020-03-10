@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+
+<body>
+    <h1>함수01</h1>
+    <script>
+        var func1 = function () {
+            console.log("hello");
+        }
+
+        // 함수호출
+        func1();
+
+        // 매게변수가 있는 함수만들기
+        var say = function (name) {
+            console.log("hi, " + name);
+        };
+
+        say(spring);
+        // hi, spring으로 출력됨
+
+
+        // 예제01.매개변수를 두 개 사용하는 다음 함수를 구현하고 실행해 봅시다.
+        var repeat = function (text, num) {
+            document.write(text + "는(은) 유명한 작가의 " + num + "번째 작품명입니다.");
+        };
+
+        repaeat(어린왕자, 5);
+
+        var repeat = function (text, num) {
+            for (var i = 0; i < num; i++) {
+                document.write(text, i);
+            };
+        };
+
+        repeat("book", 5);
+
+        // return 으로 함수를 종료하는데 사용할 수 있다.
+    </script>
+
+    <h1>함수02</h1>
+    <script>
+
+    </script>
+</body>
+
+</html>
