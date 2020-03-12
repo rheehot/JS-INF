@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Loop & Array</h1>
+    <script>
+        var workers = ['egoing', 'leezche', 'duru', 'teaho'];
+    </script>
+    <h2>Co workers</h2>
+    <ul>
+        <li>egoing</li>
+        <li>leezche</li>
+        <li>duru</li>
+        <li>teaho</li>
+        <script>
+            var i = 0;
+            while (i < workers.length) {
+                document.write('<li>' + workers[i] + '</li>');
+                i++;
+            }
+
+
+            // 예제01.구구단 결과을 배열에 저장한 후 배열의 결과를 출력한다.
+            var i = Number(prompt("몇 단을 출력하실 건가요?"));
+            document.write("<h2>구구단 " + i + "단</h2>")
+            for (var n = 1; n < 10; n++) {
+                if (i < 2 || i > 9) {
+                    document.write("2이상, 9이하의 값만 입력할 수 있습니다.");
+                    break;
+                } else {
+                    var g = n * i;
+                    console.log(g);
+                    document.write(i + "*" + n + "=" + (g) + "<br>");
+                }
+
+            }
+
+
+            var main = [];
+
+            for (var i = 2; i < 10; i++) {
+                for (var n = 1; n < 10; n++) {
+                    main[i] = i * n;
+                }
+                for (var n = 1; n < 10; n++) {
+                    document.write(n + '*' + i + '=' + main[i] + '<br>');
+                }
+
+            }
+
+
+            // 해답
+            var result = [];
+
+            for (var n = 2; n < 10; n++) {
+                // calculate
+                for (var i = 1; i < 10; i++) {
+                    result[i] = i * n;
+                }
+                // print
+                for (var i = 1; i < 10; i++) {
+                    document.write(n + '*' + i + '=' + result[i] + '<br>');
+                }
+            }
+
+            // 구구단의 결과를 배열에 저장했는데 왜 나열이 안되는지 모르겠음
+        </script>
+    </ul>
+</body>
+
+</html>

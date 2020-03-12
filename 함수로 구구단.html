@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수로 구구단</title>
+</head>
+
+<body>
+    <h1>함수를 이용해 구구단만들기</h1>
+    <script>
+        //   연습
+        var num = function (count) {
+            for (var a = 0; a < count; a++) {
+                console.log(count, a);
+            }
+        }
+
+        num(10);
+        // 입력하면 숫자가 나열된다
+
+
+
+        var num = function () {
+            for (var a = 1; a < 10; a++) {
+                console.log(a);
+            }
+        }
+
+        num();
+
+        var front = function () {
+            for (var i = 2; i < 10; i++) {
+                console.log(i);
+            }
+        }
+
+        front();
+
+
+        var main = function () {
+            for (var i = 2; i < 10; i++) {
+                for (var a = 1; a < 10; a++) {
+                    console.log(i * a)
+                }
+            }
+        }
+
+
+        // 해답
+        function gugudan(x) {
+            var ret = [];
+            for (var i = 1; i <= 9; i++) {
+                ret[i] = x * i;
+            }
+            return ret;
+        }
+        // 구구단을 계산해주는 함수/return은 왜 있는거지?
+
+        function printResult(x, ret) {
+            document.write("<h2>" + x + "단</h2>")
+            for (var i = 1; i <= 9; i++) {
+                var y = x * i;
+                document.write(x + " * " + i + " = " + y + "<br>");
+            }
+        }
+
+        function main() {
+            console.log("main 함수가 실행되었습니다.");
+            for (var n = 2; n <= 9; n++) {
+                var result = gugudan(n);
+                printResult(n, result);
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

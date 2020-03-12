@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체로 구구단 만들기</title>
+</head>
+
+<body>
+    <h1>객체로 구구단 구현</h1>
+    <script>
+        var gugudan = {};
+
+        gugudan.calculate = function (n) {
+            var num = [];
+            for (var i = 0; i < 9; i++) {
+                num[i] = (n * (i + 1));
+            }
+            return num;
+        }
+        // num[i] = (n * (i+1));에서 +1을 추가해서 var i = 0;도 1에서 0으로 수정하니 오류 해결됨
+
+        gugudan.calculate();
+
+        gugudan.main = function () {
+            for (var i = 2; i <= 9; i++) {
+                var result = gugudan.calculate(i);
+                document.write(i + '단<br>' + result + "<br>");
+            }
+        }
+
+        gugudan.main();
+
+
+        // 해설(남의 코드를 읽을수있을정도로만 공부해도 된다고 하심)
+        gugudan = {};
+        gugudan.result = [];
+        gugudan.current = -1;
+        gugudan.calculate = function (n) {
+            this.current = n;
+            for (var i = 0; i < 9; i++) {
+                this.result[i] = n * (i + 1);
+            }
+        }
+
+        gugudan.print = function () {
+            document.write("<h2>" + this.current + "단</h2>");
+            for (var i = 0; i < 9; i++) {
+                var x = this.current;
+                var t = i + 1;
+                var y = this.result[i];
+                document.write(x + "*" + t + "=" + y + "<br>");
+            }
+        }
+
+        function.main() {
+            for (var i = 0; i <= 9; i++) {
+                gugudan.calculate(i);
+                gugudan.print();
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
