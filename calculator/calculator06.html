@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값 입력 및 사칙연산 - 객체</title>
+</head>
+
+<body>
+    <h1>객체를 이용한 사칙연산</h1>
+    <div id="output"></div>
+
+
+    <script>
+        // var input = {};
+        // input.getFirstValue = function () {
+        //     Number(prompt("첫번째 숫자를 입력하세요"));
+        // };
+        // input.getSecondValue = function () {
+        //     Number(prompt("두번째 숫자를 입력하세요"));
+
+        // };
+        // intput.getOperator = function () {
+        //     prompt("연산자를 입력하세요");
+        // };
+
+
+        // var output = {};
+        // output.print = function (value) {
+        //     result = "최종 값은 " + vaule + "입니다.";
+        // }
+
+
+        // var calculator = {};
+        // calculator.calculate = function (num1, num2, op) {
+        //     var ret;
+        //     switch (op) {
+        //         case "+":
+        //             ret = num1 + num2;
+        //             break;
+        //         case "-":
+        //             ret = num1 - num2;
+        //             break;
+        //         case "*":
+        //             ret = num1 * num2;
+        //             break;
+        //         case "/":
+        //             ret = num1 / num2;
+        //             break;
+        //         default:
+        //             ret = "오류";
+        //     }
+        //     return ret;
+        // }
+
+        // function main() {
+        //     while (true) {
+        //         var num1 = input.getFirstValue();
+        //         var num2 = input.getSecondValue();
+        //         var op = input.getOperator();
+        //         if (op === 'q') {
+        //             break;
+        //         }
+        //         var value = calculator.calculate();
+        //         output.print(value);
+        //     }
+        //     var out = document.getElementById("output");
+        //     out.innerHTML = print(value);
+        // }
+
+        // main();
+
+
+        // 해설
+
+        var input = {
+            count: 2
+        };
+        input.getFirstValue = function () {
+            var n = Number(prompt("첫번째 값을 입력해주세요."));
+            return n;
+        };
+
+        input.getSecondValue = function () {
+            var num2 = Number(prompt(this.count + "번째 값을 입력해주세요."));
+            this.count++;
+            return num2;
+        };
+
+        input.getOperator = function () {
+            while (true) {
+                var op = prompt("연산자를 입력하세요.(q를 입력하면 종료됩니다.)");
+                if (op === "+" || op === "-" || op === "*" || op === "/" || op === "q") {
+                    break;
+                } else {
+                    alert("올바른 연산자를 입력해주세요.");
+                }
+            }
+            return op;
+        };
+
+        calculator = {};
+        calculator.calculate = function (first, second, op) {
+            var ret;
+            switch (op) {
+                case "+":
+                    ret = first + second;
+                    break;
+                case "-":
+                    ret = first / second;
+                    break;
+                case "*":
+                    ret = first * second;
+                    break;
+                case "/":
+                    ret = first / second;
+                    break;
+            }
+            return ret;
+        };
+
+        var output = {};
+        output.out = document.getElementById("output");
+        output.print = function (value) {
+            this.out.innerHTML = "최종 결과값은 " + vaule + "입니다.";
+        };
+
+        function main() {
+            var result = input.getFirstValue();
+            while (true) {
+                var op = input.getOperator();
+                if (op === 'q') {
+                    break;
+                }
+                var num = input.getSecondValue();
+                result = input.calculate(result, num, op);
+
+            }
+            output.innerHTML = output.print(result);
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

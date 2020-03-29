@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator05</title>
+</head>
+
+<body>
+    <h1>값 입력 및 사칙연산 - 함수</h1>
+
+
+    <script>
+        fucntion getFirstValue() {
+            var num1 = Number(prompt("첫번째 숫자를 입력하세요.(q를 입력하면 종료됩니다.)"));
+            return num1;
+        }
+
+        var n = 2;
+
+        function getSecondValue() {
+            var num2 = Number(prompt(n + "번째 숫자를 입력하세요.(q를 입력하면 종료됩니다.)"));
+            n++;
+            return num2;
+        }
+
+        function getOperator() {
+            while (true) {
+                var op = prompt("연산자를 입력하세요.(q를 입력하면 종료됩니다.)");
+                if (op === "+" || op === "-" || op === "*" || op === "/" || op === "q") {
+                    break;
+                } else {
+                    alert("올바른 연산자를 입력해주세요.");
+                }
+            }
+            return op;
+        }
+
+
+        function calculate(first, second, op) {
+            var ret;
+            switch (op) {
+                case "+":
+                    ret = first + second;
+                    break;
+                case "-":
+                    ret = first / second;
+                    break;
+                case "*":
+                    ret = first * second;
+                    break;
+                case "/":
+                    ret = first / second;
+                    break;
+            }
+            return ret;
+        }
+
+
+        function print(value) {
+            return "최종 결과값은 " + vaule + "입니다.";
+        }
+
+        function main() {
+            var result = getFirstValue();
+            while (true) {
+                var op = getOperator();
+                if (op === 'q') {
+                    break;
+                }
+                var num = getSecondValue();
+                result = calculate(result, num, op);
+
+            }
+            var output = document.getElementById("output");
+            output.innerHTML = print(result);
+        }
+
+        main();
+
+
+
+        // function calculate() {
+        //     if (getOperator() = "+") {
+        //         getFirstValue() + getSecondValue();
+        //     } else if (getOperator() = "-") {
+        //         getFirstValue() - getSecondValue();
+        //     } else if (getOperator() = "*") {
+        //         getFirstValue() * getSecondValue();
+        //     } else if (getOperator() = "/") {
+        //         getFirstValue() / getSecondValue();
+        //     } else {
+        //         break;
+        //     }
+        // };
+
+        // function print() {
+        //     if (getOperator() = "+") {
+        //         console.log(getFirstValue() + "+" + getSecondValue() + "=" + (getFirstValue() + getSecondValue()));
+        //     } else if (getOperator() = "-") {
+        //         console.log(getFirstValue() + "-" + getSecondValue() + "=" + (getFirstValue() - getSecondValue()));
+        //     } else if (getOperator() = "*") {
+        //         console.log(getFirstValue() + "*" + getSecondValue() + "=" + (getFirstValue() * getSecondValue()));
+        //     } else if (getOperator() = "/") {
+        //         console.log(getFirstValue() + "/" + getSecondValue() + "=" + (getFirstValue() / getSecondValue()));
+        //     } else {
+        //         console.log("잘못입력하셨습니다.");
+        //     }
+        // };
+
+        // function main() {
+        //     if (getOperator() = "+") {
+        //         document.write(getFirstValue() + "+" + getSecondValue() + "=" + (getFirstValue() + getSecondValue()));
+        //     } else if (getOperator() = "-") {
+        //         document.write(getFirstValue() + "-" + getSecondValue() + "=" + (getFirstValue() - getSecondValue()));
+        //     } else if (getOperator() = "*") {
+        //         document.write(getFirstValue() + "*" + getSecondValue() + "=" + (getFirstValue() * getSecondValue()));
+        //     } else if (getOperator() = "/") {
+        //         document.write(getFirstValue() + "/" + getSecondValue() + "=" + (getFirstValue() / getSecondValue()));
+        //     } else {
+        //         document.write("잘못입력하셨습니다.");
+        //     }
+        // };
+
+        // main();
+    </script>
+
+</body>
+
+</html>

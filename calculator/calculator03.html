@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator03</title>
+</head>
+
+<body>
+    <h1>값 입력 및 사칙연산 - 조건문</h1>
+    <div>
+        첫번째 수: <input type="text" id="n1"> <br>
+        두번째 수: <input type="text" id="n2"> <br>
+        연산자: <input type="text" id="op"> <br>
+        <button onclick="calc()">실행</button>
+    </div>
+    <div id="output"></div>
+    <script>
+        // 기본
+        // var n1 = Number(prompt("계산할 정수 1개를 입력하세요."));
+        // var n2 = Number(prompt("계산할 정수 1개를 입력하세요."));
+        // var op = prompt("사칙연산 +,-,*,/중 1개를 입력하세요.");
+
+        // function calc() {
+        //     if (op === '+') {
+        //         document.write(n1 + "+" + n2 + "=" + (n1 + n2) + "<br>");
+        //     } else if (op === '-') {
+        //         document.write(n1 + "-" + n2 + "=" + (n1 - n2) + "<br>");
+        //     } else if (op === '*') {
+        //         document.write(n1 + "*" + n2 + "=" + (n1 * n2) + "<br>");
+        //     } else if (op === '/') {
+        //         document.write(n1 + "/" + n2 + "=" + (n1 / n2) + "<br>");
+        //     } else {
+        //         document.write("잘못입력하셨습니다.");
+        //     }
+        // };
+        // var out = document.getElementById('output');
+        // out.appendchild(calc());
+
+
+
+
+        // 버튼
+        function calc() {
+            var n1 = Number(document.getElementById('n1').value);
+            var n2 = Number(document.getElementById('n2').value);
+            var op = document.getElementById('op').value;
+            var str = "";
+
+            if (op === '+') {
+                str += n1 + "+" + n2 + "=" + (n1 + n2) + "<br>";
+            } else if (op === '-') {
+                str += n1 + "-" + n2 + "=" + (n1 - n2) + "<br>";
+            } else if (op === '*') {
+                str += n1 + "*" + n2 + "=" + (n1 * n2) + "<br>";
+            } else if (op === '/') {
+                str += n1 + "/" + n2 + "=" + (n1 / n2) + "<br>";
+            } else {
+                str += "잘못입력하셨습니다.";
+            }
+            var out = document.getElementById('output');
+            out.innerHTML = str;
+        };
+
+
+        // switch방법
+        function calc() {
+            var n1 = Number(document.getElementById('n1').value);
+            var n2 = Number(document.getElementById('n2').value);
+            var op = document.getElementById('op').value;
+            var out = document.getElementById('output');
+            var str = "";
+            switch (op) {
+                case "+":
+                    str += n1 + "+" + n2 + "=" + (n1 + n2) + "<br>";
+                    break;
+                case "-":
+                    str += n1 + "-" + n2 + "=" + (n1 - n2) + "<br>";
+                    break;
+                case "*":
+                    str += n1 + "*" + n2 + "=" + (n1 * n2) + "<br>";
+                    break;
+                case "/":
+                    str += n1 + "/" + n2 + "=" + (n1 / n2) + "<br>";
+                    break;
+                default:
+                    str += "잘못입력하셨습니다.";
+
+            }
+            out.innerHTML = str;
+        };
+    </script>
+</body>
+
+</html>
